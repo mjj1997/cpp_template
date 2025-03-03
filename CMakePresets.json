@@ -49,7 +49,7 @@
             ],
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER": "cl",
-                "CMAKE_CXX_FLAGS": "/permissive- /W4 /w44365 /external:W3"
+                "CMAKE_CXX_FLAGS": "/permissive- /W4 /w44365 /external:W3 /WX"
             }
         },
         {
@@ -80,7 +80,7 @@
             ],
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER": "clang++",
-                "CMAKE_CXX_FLAGS": "-pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion"
+                "CMAKE_CXX_FLAGS": "-pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror"
             }
         },
         {
