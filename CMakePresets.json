@@ -7,11 +7,9 @@
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-                "VCPKG_OVERLAY_TRIPLETS":"$env{VCPKG_OVERLAY_TRIPLETS}",
-                "VCPKG_TARGET_TRIPLET": "$env{VCPKG_TARGET_TRIPLET}",
                 "CMAKE_CXX_STANDARD": "20",
-                "CMAKE_CXX_STANDARD_REQUIRED": "ON"
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
             }
         },
         {
@@ -39,65 +37,73 @@
             }
         },
         {
-            "name": "windows-debug",
-            "displayName": "Windows Debug",
+            "name": "windows",
+            "displayName": "Windows",
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
             },
-            "inherits": [
-                "debug"
-            ],
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER": "clang-cl",
+                "VCPKG_OVERLAY_TRIPLETS": "$env{VCPKG_OVERLAY_TRIPLETS}",
+                "VCPKG_TARGET_TRIPLET": "$env{VCPKG_TARGET_TRIPLET}"
+            }
+        },
+        {
+            "name": "windows-debug",
+            "displayName": "Windows Debug",
+            "inherits": [
+                "debug",
+                "windows"
+            ],
+            "cacheVariables": {
                 "CMAKE_CXX_FLAGS": "/permissive- /W4 /w44365 /external:W3 /WX"
             }
         },
         {
             "name": "windows-release",
             "displayName": "Windows Release",
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Windows"
-            },
             "inherits": [
-                "release"
+                "release",
+                "windows"
             ],
             "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "clang-cl"
+                "CMAKE_CXX_FLAGS": ""
             }
         },
         {
-            "name": "linux-debug",
-            "displayName": "Linux Debug",
+            "name": "linux",
+            "displayName": "Linux",
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Linux"
             },
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "clang++"
+            }
+        },
+        {
+            "name": "linux-debug",
+            "displayName": "Linux Debug",
             "inherits": [
-                "debug"
+                "debug",
+                "linux"
             ],
             "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "clang++",
                 "CMAKE_CXX_FLAGS": "-pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror"
             }
         },
         {
             "name": "linux-release",
             "displayName": "Linux Release",
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Linux"
-            },
             "inherits": [
-                "release"
+                "release",
+                "linux"
             ],
             "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "clang++"
+                "CMAKE_CXX_FLAGS": ""
             }
         }
     ]
