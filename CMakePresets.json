@@ -39,6 +39,7 @@
         {
             "name": "windows",
             "displayName": "Windows",
+            "hidden": true,
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
@@ -75,6 +76,7 @@
         {
             "name": "linux",
             "displayName": "Linux",
+            "hidden": true,
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
