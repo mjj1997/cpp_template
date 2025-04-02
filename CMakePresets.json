@@ -5,6 +5,7 @@
             "name": "common",
             "hidden": true,
             "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_CXX_STANDARD": "20",
@@ -16,19 +17,18 @@
             "name": "debug",
             "displayName": "Debug",
             "hidden": true,
-            "binaryDir": "${sourceDir}/build",
             "inherits": [
                 "common"
             ],
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_DEBUG_POSTFIX": "_d"
             }
         },
         {
             "name": "release",
             "displayName": "Release",
             "hidden": true,
-            "binaryDir": "${sourceDir}/build/release",
             "inherits": [
                 "common"
             ],
@@ -47,6 +47,7 @@
             },
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER": "clang-cl",
+                "CMAKE_CXX_FLAGS": "/permissive- /W4 /w44365 /external:W3 /WX",
                 "VCPKG_OVERLAY_TRIPLETS": "$env{VCPKG_OVERLAY_TRIPLETS}",
                 "VCPKG_TARGET_TRIPLET": "$env{VCPKG_TARGET_TRIPLET}"
             }
@@ -59,7 +60,7 @@
                 "windows"
             ],
             "cacheVariables": {
-                "CMAKE_CXX_FLAGS": "/permissive- /W4 /w44365 /external:W3 /WX"
+                "CMAKE_CXX_FLAGS": ""
             }
         },
         {
@@ -83,7 +84,8 @@
                 "rhs": "Linux"
             },
             "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "clang++"
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_CXX_FLAGS": "-pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror"
             }
         },
         {
@@ -94,7 +96,7 @@
                 "linux"
             ],
             "cacheVariables": {
-                "CMAKE_CXX_FLAGS": "-pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror"
+                "CMAKE_CXX_FLAGS": ""
             }
         },
         {
