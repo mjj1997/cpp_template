@@ -1,6 +1,3 @@
-#ifndef INCLUDE_H
-#define INCLUDE_H
+#pragma once
 
 void hello();
-
-#endif // INCLUDE_H

@@ -1,7 +1,8 @@
-add_executable(EXAMPLE_NAME
+add_executable(ROOT_EXAMPLE_NAME
     example.cpp
 )
-target_link_libraries(EXAMPLE_NAME PRIVATE
 
+target_link_libraries(ROOT_EXAMPLE_NAME PRIVATE
+    ${PROJECT_NAME}_static
 )
 

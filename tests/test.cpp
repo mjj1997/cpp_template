@@ -1,6 +1,11 @@
+#include "include/include.h"
+
 #include <gtest/gtest.h>
 
-TEST(ProjectBasicTest, Test1) {}
+TEST(ProjectBasicTest, Test1)
+{
+    hello();
+}
 
 int main(int argc, char* argv[])
 {

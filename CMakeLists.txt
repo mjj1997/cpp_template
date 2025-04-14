@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(PROJECT_NAME VERSION 1.1.1.1 LANGUAGES CXX)
+project(ROOT VERSION 1.1 LANGUAGES CXX)
 
-option(BUILD_SHARED_LIBS "build shared library" ON)
-option(BUILD_STATIC_LIBS "build static library" ON)
+option(BUILD_ROOT_SHARED_LIBS "build ROOT shared library" ON)
+option(BUILD_ROOT_STATIC_LIBS "build ROOT static library" ON)
 
 option(BUILD_EXAMPLES "build examples" OFF)
 option(BUILD_TESTS "build unit tests" OFF)
 
-if (MSVC)
+if(MSVC)
     set(LIBS ${LIBS} winmm iphlpapi ws2_32 dbghelp Kernel32)
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
