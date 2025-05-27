@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(ROOT VERSION 1.1 LANGUAGES CXX)
+project(demo VERSION 1.1 LANGUAGES CXX)
 
 option(BUILD_${PROJECT_NAME}_SHARED_LIBS "build ${PROJECT_NAME} shared library" ON)
 option(BUILD_${PROJECT_NAME}_STATIC_LIBS "build ${PROJECT_NAME} static library" ON)
@@ -18,8 +18,6 @@ else()
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 endif()
-
-include_directories(${CMAKE_SOURCE_DIR})
 
 message(STATUS "CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}")
 message(STATUS "CMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}")
