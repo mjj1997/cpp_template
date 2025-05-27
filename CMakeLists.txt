@@ -11,8 +11,7 @@ option(BUILD_TESTS "build unit tests" OFF)
 if(MSVC)
     set(LIBS ${LIBS} winmm iphlpapi ws2_32 dbghelp Kernel32)
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D_WIN32_WINNT=0x0601")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /D_WIN32_WINNT=0x0601")
 else()
     set(LIBS ${LIBS} dl pthread)
 
