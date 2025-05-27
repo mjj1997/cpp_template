@@ -58,10 +58,7 @@
             "inherits": [
                 "debug",
                 "windows"
-            ],
-            "cacheVariables": {
-                "CMAKE_CXX_FLAGS": ""
-            }
+            ]
         },
         {
             "name": "windows-release",
@@ -69,10 +66,7 @@
             "inherits": [
                 "release",
                 "windows"
-            ],
-            "cacheVariables": {
-                "CMAKE_CXX_FLAGS": ""
-            }
+            ]
         },
         {
             "name": "linux",
@@ -94,10 +88,7 @@
             "inherits": [
                 "debug",
                 "linux"
-            ],
-            "cacheVariables": {
-                "CMAKE_CXX_FLAGS": ""
-            }
+            ]
         },
         {
             "name": "linux-release",
@@ -105,10 +96,7 @@
             "inherits": [
                 "release",
                 "linux"
-            ],
-            "cacheVariables": {
-                "CMAKE_CXX_FLAGS": ""
-            }
+            ]
         }
     ]
 }
