@@ -47,4 +47,14 @@ python scripts/test.py
 
 ## pack
 
-TBD
+- default pack in `tar.gz`
+
+```bash
+python scripts/pack.py
+```
+
+- add `--zip` to pack in `.zip`
+
+```bash
+python scripts/pack.py --zip
+```

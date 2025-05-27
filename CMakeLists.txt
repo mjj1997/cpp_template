@@ -31,3 +31,14 @@ if(BUILD_TESTS)
     add_subdirectory(tests)
 endif()
 
+install(FILES "${PROJECT_SOURCE_DIR}/include/demo/demo.h"
+        DESTINATION include/demo)
+
+include(InstallRequiredSystemLibraries)
+# set(CPACK_RESOURCE_FILE_LICENSE "${PROJECT_SOURCE_DIR}/License.txt")
+set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
+set(CPACK_GENERATOR "TGZ")
+set(CPACK_SOURCE_GENERATOR "TGZ")
+include(CPack)
+
