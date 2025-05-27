@@ -24,7 +24,7 @@ def test(system, args=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="build project")
+    parser = argparse.ArgumentParser(description="test project")
     # parser.add_argument(
     #     "--debug", action="store_true", default=False, help="debug configuration"
     # )
