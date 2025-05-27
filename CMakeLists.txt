@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.20)
 
 project(demo VERSION 1.1 LANGUAGES CXX)
 
-option(BUILD_${PROJECT_NAME}_SHARED_LIBS "build ${PROJECT_NAME} shared library" ON)
-option(BUILD_${PROJECT_NAME}_STATIC_LIBS "build ${PROJECT_NAME} static library" ON)
+option(BUILD_${PROJECT_NAME}_SHARED_LIBS "build shared library" ON)
+option(BUILD_${PROJECT_NAME}_STATIC_LIBS "build static library" ON)
 
 option(BUILD_EXAMPLES "build examples" OFF)
 option(BUILD_TESTS "build unit tests" OFF)
